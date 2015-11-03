@@ -432,7 +432,7 @@
         <calculation class='tableau' formula='[MEN_TOTAL]/[TOTAL]' />
       </column>
       <column caption='KPI' datatype='string' name='[Calculation_318559319963975683]' role='measure' type='nominal'>
-        <calculation class='tableau' formula='if ([Calculation_318559319955103745] &lt;= 0.0018) then &apos;Low&apos;&#10;ELSEIF ([Calculation_318559319955103745] &lt;= 0.01) then &apos;Medium&apos;&#10;else &apos;High&apos;&#10;end' />
+        <calculation class='tableau' formula='if ([Calculation_318559319955103745] &lt;= 0.0018) then &apos;Low&apos;&#10;ELSEIF ([Calculation_318559319955103745] &gt; 0.0018 and [Calculation_318559319955103745] &lt;= 0.01) then &apos;Medium&apos;&#10;else &apos;High&apos;&#10;end' />
       </column>
       <column caption='Drug10' datatype='real' name='[DRUG10]' role='measure' type='quantitative' />
       <column caption='Drug11' datatype='real' name='[DRUG11]' role='measure' type='quantitative' />
@@ -640,7 +640,7 @@
               <calculation class='tableau' formula='(SUM([DRUG12])+SUM([LIQUOR12])+SUM([WEAPON12]))/SUM([TOTAL])' />
             </column>
             <column caption='KPI' datatype='string' name='[Calculation_318559319963975683]' role='measure' type='nominal'>
-              <calculation class='tableau' formula='if ([Calculation_318559319955103745] &lt;= 0.0018) then &apos;Low&apos;&#10;ELSEIF ([Calculation_318559319955103745] &lt;= 0.01) then &apos;Medium&apos;&#10;else &apos;High&apos;&#10;end' />
+              <calculation class='tableau' formula='if ([Calculation_318559319955103745] &lt;= 0.0018) then &apos;Low&apos;&#10;ELSEIF ([Calculation_318559319955103745] &gt; 0.0018 and [Calculation_318559319955103745] &lt;= 0.01) then &apos;Medium&apos;&#10;else &apos;High&apos;&#10;end' />
             </column>
             <column caption='Drug12' datatype='real' name='[DRUG12]' role='measure' type='quantitative' />
             <column caption='Liquor12' datatype='real' name='[LIQUOR12]' role='measure' type='quantitative' />
@@ -670,6 +670,14 @@
             </groupfilter>
           </filter>
           <sort class='alphabetic' column='[RESIDENCEHALLARREST2013 (C##CS329E_PJO293)].[none:SECTOR_DESC:nk]' direction='ASC' />
+          <sort class='manual' column='[RESIDENCEHALLARREST2013 (C##CS329E_PJO293)].[usr:Calculation_318559319963975683:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;High&quot;</bucket>
+              <bucket>&quot;Medium&quot;</bucket>
+              <bucket>&quot;Low&quot;</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </sort>
           <slices>
             <column>[RESIDENCEHALLARREST2013 (C##CS329E_PJO293)].[:Measure Names]</column>
             <column>[RESIDENCEHALLARREST2013 (C##CS329E_PJO293)].[none:SECTOR_DESC:nk]</column>
@@ -706,7 +714,7 @@
   </worksheets>
   <windows>
     <window class='schema' source-height='-1' />
-    <window auto-hidden='0' class='worksheet' maximized='1' name='Sheet 1'>
+    <window auto-hidden='0' class='worksheet' maximized='0' name='Sheet 1'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -761,7 +769,7 @@
       <viewpoint />
       <visual />
     </window>
-    <window auto-hidden='0' class='worksheet' maximized='0' name='Sheet 3'>
+    <window auto-hidden='0' class='worksheet' maximized='1' name='Sheet 3'>
       <cards>
         <edge name='left'>
           <strip size='160'>
