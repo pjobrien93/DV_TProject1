@@ -1,0 +1,20 @@
+---
+title: "Data Visualization R Project4"
+output: html_document
+---
+  
+  ##Mohammad Chauhan & Patricia O'Brien
+  
+  
+```{r}
+source("../02 Tableau/graph1.jpg", echo = TRUE)
+```
+
+
+```{r}
+source("../02 Tableau/graph2.jpg", echo = TRUE)
+```
+
+```{r}
+source("../02 Tableau/graph3.jpg", echo = TRUE)
+```
