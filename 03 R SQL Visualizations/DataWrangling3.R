@@ -1,6 +1,7 @@
 require("jsonlite")
 require("RCurl")
 require("dplyr")
+require(dplyr)
 require("ggplot2")
 
 # Change the USER and PASS below to be your UTEid
