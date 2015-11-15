@@ -37,5 +37,5 @@ BLENDED DATASET
 source('~/DataVisualization/DV_TProject1/03 R SQL Visualizations/BlendedDataViz.R', echo=TRUE)
 ```
 
-For the blended data we chose to use percentages of population below the poverty line for each state to blend with our residence hall data. For the plot on Tableau, we made a crosstab that displayed the amount of drug violences in each state for all public universities. The KPI in this case is the percentage of the population below the poverty line. The numbers in blue are high percentages (17 and above), the green numbers are medium percentages (14 to 17), and the yellow numbers are low percentages (13 and below). 
+For the blended data we chose to use percentages of population below the poverty line for each state to blend with our residence hall data. For the plot on Tableau, we made a crosstab that displayed the amount of drug violences in each state for all public universities. The KPI in this case is the percentage of the population below the poverty line. We compared the percentage of population below poverty in each state against the drug offenses in public universities. The numbers in blue are high percentages (17% and above), the green numbers are medium percentages (14% to 17%), and the yellow numbers are low percentages (13% and below). 
 
