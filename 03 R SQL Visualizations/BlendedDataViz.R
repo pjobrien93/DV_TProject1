@@ -23,7 +23,7 @@ ggplot() +
   labs(title='KPI of Percentage Below Poverty') +
   labs(x=paste("Type of University"), y=paste("State")) +
   layer(data=df, 
-        mapping=aes(x=SECTOR_DESC, y=STATE, label=LIQUOR12), 
+        mapping=aes(x=SECTOR_DESC, y=STATE, label=DRUG12), 
         stat="identity", 
         stat_params=list(), 
         geom="text",
@@ -54,3 +54,4 @@ ggplot() +
         geom_params=list(alpha=0.50), 
         position=position_identity()
   )
+
