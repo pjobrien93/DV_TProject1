@@ -7,9 +7,7 @@ require(dplyr)
 # Change the USER and PASS below to be your UTEid
 df <- data.frame(fromJSON(getURL(URLencode('skipper.cs.utexas.edu:5001/rest/native/?query="select INSTNM , LIQUOR12, DRUG12, WEAPON12, MEN_TOTAL, TOTAL from RESIDENCEHALLARREST2013"'),httpheader=c(DB='jdbc:oracle:thin:@sayonara.microlab.cs.utexas.edu:1521:orcl', USER='C##cs329e_pjo293', PASS='orcl_pjo293', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE), ))
 
-summary(df)
-
-df <- df %>% filter(LIQUOR12 != "null", DRUG12 != "null", WEAPON12 != "null", MEN_TOTAL != "null", TOTAL!="null"); View(df);
+df <- df %>% filter(LIQUOR12 != "null", DRUG12 != "null", WEAPON12 != "null", MEN_TOTAL != "null", TOTAL!="null")
 
 #df$MEN_TOTAL <- as.numeric(as.character(df$MEN_TOTAL))
 df$LIQUOR12 <- as.numeric(as.character(df$LIQUOR12))
@@ -22,7 +20,6 @@ df$RATE <- (df$LIQUOR12 + df$DRUG12 + df$WEAPON12) / df$TOTAL
 
 avg_crimeRate = mean(df$RATE)
 
-View(df);
 ggplot() + 
   coord_cartesian() + 
   scale_x_continuous() +
